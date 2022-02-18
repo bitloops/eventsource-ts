@@ -3,6 +3,7 @@ import events from 'events';
 import https from 'https';
 import http from 'http';
 import util from 'util';
+import { parseURL } from 'whatwg-url';
 
 var httpsOptions = [
   'pfx', 'key', 'passphrase', 'cert', 'ca', 'ciphers',
@@ -83,7 +84,7 @@ function EventSource (url, eventSourceInitDict) {
   var reconnectUrl = null;
 
   function connect () {
-    var options = url.parse(url);
+    var options = parseURL(url);
     var isSecure = options.protocol === 'https:';
     options.headers = { 'Cache-Control': 'no-cache', 'Accept': 'text/event-stream' };
     if (lastEventId) options.headers['Last-Event-ID'] = lastEventId;
@@ -108,7 +109,7 @@ function EventSource (url, eventSourceInitDict) {
     // and include the original url in path and Host headers
     var useProxy = eventSourceInitDict && eventSourceInitDict.proxy
     if (useProxy) {
-      var proxy = url.parse(eventSourceInitDict.proxy);
+      var proxy = parseURL(eventSourceInitDict.proxy);
       isSecure = proxy.protocol === 'https:';
 
       options.protocol = isSecure ? 'https:' : 'http:';
