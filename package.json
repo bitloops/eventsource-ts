@@ -1,6 +1,6 @@
 {
   "name": "eventsource-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "W3C compliant EventSource client for Node.js and browser (polyfill) written in TypeScript based on the unmaintained eventsource JavaScript package by Aslak Hellesøy",
   "keywords": [
     "eventsource",
@@ -22,7 +22,7 @@
   "directories": {
     "lib": "./lib"
   },
-  "main": "./lib/eventsource",
+  "main": "./dist/eventsource-ts",
   "license": "MIT",
   "licenses": [
     {
