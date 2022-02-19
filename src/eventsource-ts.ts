@@ -84,7 +84,10 @@ function EventSource (url, eventSourceInitDict) {
   var reconnectUrl = null;
 
   function connect () {
-    var options = parseURL(url);
+    var options = url;
+    if (typeof url === 'string') {
+      options = parseURL(url);
+    }
     var isSecure = options.protocol === 'https:';
     options.headers = { 'Cache-Control': 'no-cache', 'Accept': 'text/event-stream' };
     if (lastEventId) options.headers['Last-Event-ID'] = lastEventId;
@@ -295,6 +298,7 @@ function EventSource (url, eventSourceInitDict) {
           data: data.slice(0, -1), // remove trailing newline
           lastEventId: lastEventId,
           origin: original(url),
+          url: url,
         }));
         data = '';
       }
