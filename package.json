@@ -1,6 +1,6 @@
 {
   "name": "eventsource-ts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "W3C compliant EventSource client for Node.js and browser (polyfill) written in TypeScript based on the unmaintained eventsource JavaScript package by Aslak Hellesøy",
   "keywords": [
     "eventsource",
@@ -68,6 +68,7 @@
   },
   "dependencies": {
     "https-browserify": "^1.0.0",
+    "node-polyfill-webpack-plugin": "^1.1.4",
     "original": "^1.0.0",
     "stream-http": "^3.2.0",
     "url": "^0.11.0",
