@@ -1,5 +1,7 @@
 # EventSourceTS 
 
+This library is not ready. First version we will be updating the JavaScript version and then rewriting in TypeScript.
+
 This library is a TypeScript implementation of the [EventSource](https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events) client based on Aslak Hellesøy's (eventsource package) (https://www.npmjs.com/package/eventsource) that is no longer maintained. The API aims to be W3C compatible.
 
 You can use it with Node.js or as a browser polyfill for
